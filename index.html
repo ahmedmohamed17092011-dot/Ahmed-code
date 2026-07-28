@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Mohamed</title>
+  <link rel="shortcut icon" href="Ahmed.jpeg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <!-- قسم الواجهة الترحيبية -->
+      <div id="img">
+         <img src="Ahmed.jpeg" alt="Ahmed Mohamed" class="profile-img">
+         <h1 id="h1">Ahmed Mohamed</h1>
+      </div>
+
+    <!-- متجر التطبيقات -->
+    <header>
+        <h1>متجر التطبيقات والألعاب</h1>
+        <p>اضغط على تحميل لتجربة الحركة الذكية</p>
+    </header>
+
+    <div class="apps-container">
+
+        <!-- التطبيق الأول -->
+        <div class="app-card">
+            <img src="صحتنا بذكاء.png" alt="أيقونة تطبيق صحتنا بذكاء" class="app-icon">
+            <h3 class="app-title" title="تطبيق صحتنا بذكاء">تطبيق صحتنا بذكاء</h3>
+            <p class="app-desc">تطبيق متطور لإجراء النظام الصحي وتنظيم الوجبات والمتابعة الطبية اليومية.</p>
+            
+            <!-- نسخة الأندرويد -->
+            <p class="platform-label">نسخة الأندرويد:</p>
+            <div class="container">
+              <label class="label">
+                <input type="checkbox" class="input" onchange="startDownload(this, 'صحتنا بذكاء.apk')" />
+                <span class="circle">
+                  <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">تحميل APK</p>
+                <p class="title" style="color: rgb(35, 174, 35);">تم التحميل ✓</p>
+              </label>
+            </div>
+
+            <!-- نسخة الكمبيوتر -->
+            <p class="platform-label windows-label">نسخة الكمبيوتر (Windows):</p>
+            <div class="container">
+              <label class="label windows-btn">
+                <input type="checkbox" class="input" onchange="startDownload(this, 'Smart Health.zip')" />
+                <span class="circle">
+                  <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">تحميل EXE</p>
+                <p class="title" style="color: rgb(35, 174, 35);">تم التحميل ✓</p>
+              </label>
+            </div>
+        </div>
+
+        <!-- التطبيق الثاني -->
+        <div class="app-card">
+            <img src="الزراعة الذكية.png" alt="أيقونة تطبيق الزراعة الذكية" class="app-icon">
+            <h3 class="app-title" title="تطبيق الزراعة الذكية">تطبيق الزراعة الذكية</h3>
+            <p class="app-desc">مراقبة وإدارة محاصيلك الزراعية، وتحليل التربة ونظام الري بذكاء اصطناعي.</p>
+            
+            <!-- نسخة الأندرويد -->
+            <p class="platform-label">نسخة الأندرويد:</p>
+            <div class="container">
+              <label class="label">
+                <input type="checkbox" class="input" onchange="startDownload(this, 'الزراعة الذكية.apk')" />
+                <span class="circle">
+                  <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">تحميل APK</p>
+                <p class="title" style="color: rgb(35, 174, 35);">تم التحميل ✓</p>
+              </label>
+            </div>
+
+            <!-- نسخة الكمبيوتر -->
+            <p class="platform-label windows-label">نسخة الكمبيوتر (Windows):</p>
+            <div class="container">
+              <label class="label windows-btn">
+                <input type="checkbox" class="input" onchange="startDownload(this, 'Smart Farming.zip')" />
+                <span class="circle">
+                  <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                  </svg>
+                  <div class="square"></div>
+                </span>
+                <p class="title">تحميل EXE</p>
+                <p class="title" style="color: rgb(35, 174, 35);">تم التحميل ✓</p>
+              </label>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- زر واتساب عائم وثابت -->
+    <a href="https://wa.me/201208144800?text=مرحباً، أحتاج إلى مساعدة بخصوص متجر التطبيقات" target="_blank" class="floating-whatsapp" title="تواصل معنا عبر واتساب">
+        💬 تواصل معنا
+    </a>
+    <script src="main.js"></script>
+</body>
+</html>
