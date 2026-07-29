@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  شهادات    </title>
+
+<link rel="icon" type="image/png" href="Ahmed.jpeg">
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #2563eb;
+            --accent-color: #38bdf8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.05);
+        }
+
+        .card-header {
+            background-color: #f1f5f9;
+            padding: 1.25rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge {
+            background-color: #dbeafe;
+            color: var(--secondary-color);
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            background-color: #fafafa;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ahmed Mohamed Ahmed Hassan</h1>
+        <p>مطور تكنولوجيا واعد | متخصص في علوم البيانات، الذكاء الاصطناعي، ومصمم جرافيك</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">السجل الأكاديمي والشهادات (8 شهادات معتمدة)</h2>
+        
+        <div class="certificates-grid">
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_1.jpg" alt="Digital Egypt Cubs Initiative">
+                </div>
+                <div class="card-header">
+                    <span>مبادرة أشبال مصر الرقمية</span>
+                    <span class="badge">Udacity</span>
+                </div>
+                <div class="card-body">
+                    <h3>Digital Egypt Cubs Initiative - Level One</h3>
+                    <p><strong>الجهة:</strong> وزارة الاتصالات وتكنولوجيا المعلومات بالتعاون مع Udacity</p>
+                </div>
+                <div class="card-footer">أكتوبر 2025</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_3.jpg" alt="DIGITOPIA">
+                </div>
+                <div class="card-header">
+                    <span>مسابقة DIGITOPIA</span>
+                    <span class="badge">وزارة الاتصالات</span>
+                </div>
+                <div class="card-body">
+                    <h3>مجال البرمجيات والذكاء الاصطناعي</h3>
+                    <p>إنجاز المرحلة الثانية ضمن النسخة الأولى من المسابقة بنجاح.</p>
+                </div>
+                <div class="card-footer">عام: 2025</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/شهادة/شهادة_1.jpg" alt="جرافيك ديزاين">
+                </div>
+                <div class="card-header">
+                    <span>شهادة شكر وتقدير</span>
+                    <span class="badge">وزارة الشباب والرياضة</span>
+                </div>
+                <div class="card-body">
+                    <h3>كورس الجرافيك ديزاين (Graphic Design)</h3>
+                    <p>منوحة من مجلس أمناء كيان شباب بحري التابع للوزارة.</p>
+                </div>
+                <div class="card-footer">تقدير للعمل الدؤوب والمخلص</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_7.jpg" alt="Information Representation">
+                </div>
+                <div class="card-header">
+                    <span>Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
+                </div>
+                <div class="card-body">
+                    <h3>Information Representation and Data Organization</h3>
+                    <p><strong>كود الشهادة:</strong> ICT20260123011013</p>
+                </div>
+                <div class="card-footer">23-01-2026</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_8.jpg" alt="Data Management">
+                </div>
+                <div class="card-header">
+                    <span>Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
+                </div>
+                <div class="card-body">
+                    <h3>Data Management and Analytics  (CRA Training Program )</h3>
+                    <p><strong>كود الشهادة:</strong> ICT20251227006849</p>
+                </div>
+                <div class="card-footer">27-12-2025</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_5.jpg" alt="Overview of AI">
+                </div>
+                <div class="card-header">
+                    <span>Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
+                </div>
+                <div class="card-body">
+                    <h3>Overview of AI (Arabic)</h3>
+                    <p><strong>كود الشهادة:</strong> ICT20251222012596</p>
+                </div>
+                <div class="card-footer">22-12-2025</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_6.jpg" alt="Cloud Computing">
+                </div>
+                <div class="card-header">
+                    <span>Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
+                </div>
+                <div class="card-body">
+                    <h3>Development and Basic Concepts of Cloud Computing</h3>
+                    <p><strong>كود الشهادة:</strong> ICT20251225004676</p>
+                </div>
+                <div class="card-footer">25-12-2025</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="Ahmed/PDF/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥/CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_4.jpg" alt="Data Analysis CRA">
+                </div>
+                <div class="card-header">
+                    <span>Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
+                </div>
+                <div class="card-body">
+                    <h3>Data Management and Analysis</h3>
+                    <p><strong>كود الشهادة:</strong> ICTCRA20251227006849</p>
+                </div>
+                <div class="card-footer">27-12-2025</div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>كلها شهادات حقيقية وليست فبركة</p>
+    </footer>
+
+</body>
+</html>
