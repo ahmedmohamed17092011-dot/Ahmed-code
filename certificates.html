@@ -37,6 +37,17 @@
             text-align: center;
         }
 
+        .profile-img {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     border: 4px solid #00d2ff;
+     object-fit: cover;
+     box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+     margin-bottom: 15px;
+     transition: transform 0.3s ease;
+        }
+
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -172,6 +183,9 @@
 <body>
 
     <header>
+         <div id="img">
+         <img src="Ahmed.jpeg" alt="Ahmed Mohamed" class="profile-img">
+         </div>
         <h1>Ahmed Mohamed Ahmed Hassan</h1>
         <p>مطور تكنولوجيا واعد | متخصص في علوم البيانات، الذكاء الاصطناعي، ومصمم جرافيك</p>
     </header>
