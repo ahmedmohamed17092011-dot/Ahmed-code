@@ -3,369 +3,701 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شهادات</title>
-
+    <title>السجل الأكاديمي والشهادات | Ahmed Mohamed</title>
     <link rel="icon" type="image/png" href="Ahmed.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0f172a;
-            --secondary-color: #2563eb;
-            --accent-color: #38bdf8;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --bg-gradient: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #162238 100%);
+            --accent: #00d2ff;
+            --accent-glow: rgba(0, 210, 255, 0.35);
+            --secondary: #3b82f6;
+            --card-bg: rgba(30, 41, 59, 0.55);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background: var(--bg-gradient);
             color: var(--text-main);
-            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
+        .top-nav {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .profile-img {
-     width: 150px;
-     height: 150px;
-     border-radius: 50%;
-     border: 4px solid #00d2ff;
-     object-fit: cover;
-     box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-     margin-bottom: 15px;
-     transition: transform 0.3s ease;
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--accent);
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            transition: all 0.3s ease;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .back-btn:hover {
+            background: var(--accent);
+            color: #090d16;
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateX(4px);
+        }
+
+        .cert-counter {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             font-weight: 700;
         }
 
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem 2rem;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 0 30px var(--accent-glow);
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.06);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.4rem;
+        }
+
         header p {
-            font-size: 1.2rem;
-            color: var(--accent-color);
+            font-size: 1.05rem;
+            color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
         }
 
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 1.5rem auto 2.5rem;
+            padding: 0 1rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.35);
+            transform: translateY(-2px);
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            padding: 0 1.5rem 4rem;
         }
 
         .certificates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            border-color: rgba(0, 210, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 210, 255, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card-img-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
+            background: #0b1120;
+            position: relative;
             overflow: hidden;
-            background-color: #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+            cursor: zoom-in;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-bottom: 1px solid var(--card-border);
         }
 
         .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.4s ease;
         }
 
         .card:hover .card-img-container img {
             transform: scale(1.05);
         }
 
+        .zoom-hint {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.85);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card-img-container:hover .zoom-hint {
+            opacity: 1;
+        }
+
         .card-header {
-            background-color: #f1f5f9;
-            padding: 1.25rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--primary-color);
+            padding: 1rem 1.4rem 0.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 10px;
+        }
+
+        .org-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #cbd5e1;
         }
 
         .badge {
-            background-color: #dbeafe;
-            color: var(--secondary-color);
+            background: rgba(59, 130, 246, 0.18);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.35);
             font-size: 0.75rem;
-            padding: 4px 8px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-weight: 600;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .card-body {
-            padding: 1.5rem;
+            padding: 0.6rem 1.4rem 1.2rem;
             flex-grow: 1;
         }
 
         .card-body h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 0.5rem;
-            color: var(--secondary-color);
+            line-height: 1.5;
         }
 
         .card-body p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .code-tag {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--accent);
+            font-family: 'Poppins', monospace;
+            font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-top: 6px;
+            direction: ltr;
         }
 
         .card-footer {
-            padding: 1rem 1.5rem;
-            background-color: #fafafa;
-            border-top: 1px solid #f1f5f9;
-            font-size: 0.85rem;
+            padding: 0.85rem 1.4rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.82rem;
             color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .verified-dot {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #34d399;
+            font-weight: 600;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(5, 8, 17, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.25);
+            border: 2px solid rgba(0, 210, 255, 0.4);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: #ef4444;
+            transform: rotate(90deg);
         }
 
         footer {
-            background-color: var(--primary-color);
-            color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 4rem;
+            background: rgba(9, 13, 22, 0.8);
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .certificates-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <nav class="top-nav">
+        <a href="index.html" class="back-btn">→ العودة للرئيسية</a>
+        <span class="cert-counter">12 شهادة معتمدة</span>
+    </nav>
+
     <header>
-         <div id="img">
-         <img src="Ahmed.png" alt="Ahmed Mohamed" class="profile-img">
-         </div>
+        <img src="Ahmed.png" alt="Ahmed Mohamed" class="profile-img">
         <h1>Ahmed Mohamed Ahmed Hassan</h1>
-        <p>مطور تكنولوجيا واعد | متخصص في علوم البيانات، الذكاء الاصطناعي، ومصمم جرافيك</p>
+        <p>السجل الأكاديمي والشهادات المعتمدة في البرمجة، الذكاء الاصطناعي، وعلوم البيانات</p>
     </header>
 
+    <!-- شريط التصفية -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">الكل (12)</button>
+        <button class="filter-btn" data-filter="ischool">iSchool (1)</button>
+        <button class="filter-btn" data-filter="huawei">Huawei ICT (6)</button>
+        <button class="filter-btn" data-filter="deci">أشبال مصر الرقمية (1)</button>
+        <button class="filter-btn" data-filter="competitions">المسابقات (2)</button>
+        <button class="filter-btn" data-filter="dev">تصميم وبرمجة أخرى (2)</button>
+    </div>
+
     <div class="container">
-        <h2 class="section-title">السجل الأكاديمي والشهادات (11 شهادة معتمدة)</h2>
-        
         <div class="certificates-grid">
 
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_1.jpg" alt="Digital Egypt Cubs Initiative">
-                </div>
-                <div class="card-header">
-                    <span>مبادرة أشبال مصر الرقمية</span>
-                    <span class="badge">Udacity</span>
-                </div>
-                <div class="card-body">
-                    <h3>Digital Egypt Cubs Initiative - Level One</h3>
-                    <p><strong>الجهة:</strong> وزارة الاتصالات وتكنولوجيا المعلومات بالتعاون مع Udacity</p>
-                </div>
-                <div class="card-footer">أكتوبر 2025</div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="31109173200153.jpg" alt="Digital Egypt Cubs Initiative Summer Competition">
-                </div>
-                <div class="card-header">
-                    <span>مسابقة مبادرة أشبال مصر الرقمية</span>
-                    <span class="badge">Eyouth</span>
-                </div>
-                <div class="card-body">
-                    <h3>Second Phase (Workshops and Team Formation)</h3>
-                    <p><strong>البرنامج:</strong> DECI Summer Competition - 4th Batch of the Basic Program</p>
-                </div>
-                <div class="card-footer">سبتمبر 2026</div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 1. شهادة iSchool (في البداية لوحدها) -->
+            <div class="card" data-category="ischool">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="undefined Certificate.png" alt="iSchool Certificate">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>iSchool</span>
-                    <span class="badge">iSchool Scholarship</span>
+                    <span class="org-name">iSchool</span>
+                    <span class="badge">Scholarship</span>
                 </div>
                 <div class="card-body">
                     <h3>Grade 8, Module 1: M3: Web Development with HTML & CSS</h3>
-                    <p><strong>البرنامج:</strong> Web Development with HTML & CSS</p>
+                    <p>تطوير مواقع الويب باستخدام HTML & CSS</p>
                 </div>
-                <div class="card-footer">19/10/2026</div>
+                <div class="card-footer">
+                    <span>19/10/2026</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_3.jpg" alt="DIGITOPIA">
+            <!-- 2. Huawei 1 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_2.jpg" alt="Huawei Additional Certificate">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>مسابقة DIGITOPIA</span>
-                    <span class="badge">وزارة الاتصالات</span>
+                    <span class="org-name">Huawei ICT Academy</span>
+                    <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
-                    <h3>مجال البرمجيات والذكاء الاصطناعي</h3>
-                    <p>إنجاز المرحلة الثانية ضمن النسخة الأولى من المسابقة بنجاح.</p>
+                    <h3>شهادة تدريب إضافية (هواوي)</h3>
+                    <p>برنامج تدريبي معتمد ضمن أكاديمية هواوي</p>
                 </div>
-                <div class="card-footer">عام: 2025</div>
+                <div class="card-footer">
+                    <span>2026</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="شهادة_1.jpg" alt="جرافيك ديزاين">
-                </div>
-                <div class="card-header">
-                    <span>شهادة شكر وتقدير</span>
-                    <span class="badge">وزارة الشباب والرياضة</span>
-                </div>
-                <div class="card-body">
-                    <h3>كورس الجرافيك ديزاين (Graphic Design)</h3>
-                    <p>منوحة من مجلس أمناء كيان شباب بحري التابع للوزارة.</p>
-                </div>
-                <div class="card-footer">تقدير للعمل الدؤوب والمخلص</div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 3. Huawei 2 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_7.jpg" alt="Information Representation">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>Huawei ICT Academy</span>
+                    <span class="org-name">Huawei ICT Academy</span>
                     <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
                     <h3>Information Representation and Data Organization</h3>
-                    <p><strong>كود الشهادة:</strong> ICT20260123011013</p>
+                    <span class="code-tag">ID: ICT20260123011013</span>
                 </div>
-                <div class="card-footer">23-01-2026</div>
+                <div class="card-footer">
+                    <span>23-01-2026</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 4. Huawei 3 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_8.jpg" alt="Data Management">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>Huawei ICT Academy</span>
+                    <span class="org-name">Huawei ICT Academy</span>
                     <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
                     <h3>Data Management and Analytics (CRA Training Program)</h3>
-                    <p><strong>كود الشهادة:</strong> ICT20251227006849</p>
+                    <span class="code-tag">ID: ICT20251227006849</span>
                 </div>
-                <div class="card-footer">27-12-2025</div>
+                <div class="card-footer">
+                    <span>27-12-2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 5. Huawei 4 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_5.jpg" alt="Overview of AI">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>Huawei ICT Academy</span>
+                    <span class="org-name">Huawei ICT Academy</span>
                     <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
                     <h3>Overview of AI (Arabic)</h3>
-                    <p><strong>كود الشهادة:</strong> ICT20251222012596</p>
+                    <span class="code-tag">ID: ICT20251222012596</span>
                 </div>
-                <div class="card-footer">22-12-2025</div>
+                <div class="card-footer">
+                    <span>22-12-2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 6. Huawei 5 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_6.jpg" alt="Cloud Computing">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>Huawei ICT Academy</span>
+                    <span class="org-name">Huawei ICT Academy</span>
                     <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
                     <h3>Development and Basic Concepts of Cloud Computing</h3>
-                    <p><strong>كود الشهادة:</strong> ICT20251225004676</p>
+                    <span class="code-tag">ID: ICT20251225004676</span>
                 </div>
-                <div class="card-footer">25-12-2025</div>
+                <div class="card-footer">
+                    <span>25-12-2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
+            <!-- 7. Huawei 6 -->
+            <div class="card" data-category="huawei">
+                <div class="card-img-container" onclick="openModal(this)">
                     <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_4.jpg" alt="Data Analysis CRA">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>Huawei ICT Academy</span>
+                    <span class="org-name">Huawei ICT Academy</span>
                     <span class="badge">هواوي</span>
                 </div>
                 <div class="card-body">
                     <h3>Data Management and Analysis</h3>
-                    <p><strong>كود الشهادة:</strong> ICTCRA20251227006849</p>
+                    <span class="code-tag">ID: ICTCRA20251227006849</span>
                 </div>
-                <div class="card-footer">27-12-2025</div>
+                <div class="card-footer">
+                    <span>27-12-2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="PDFReader_Convert_٢٠٢٦٠٩١١_١٤١٧٤٢_1.png" alt="Cloud Computing">
+            <!-- 8. مبادرة أشبال مصر الرقمية -->
+            <div class="card" data-category="deci">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_1.jpg" alt="Digital Egypt Cubs Initiative">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
                 </div>
                 <div class="card-header">
-                    <span>شهادة شكر وتقدير</span>
-                    <span class="badge">مؤسسة شباب الدقهلية</span>
+                    <span class="org-name">مبادرة أشبال مصر الرقمية</span>
+                    <span class="badge">Udacity</span>
                 </div>
                 <div class="card-body">
-                    <h3>أتم نجاح الدورة التعليمية في البرمجة</h3>
-                    <p>منحة من DYD شباب الدقهلية</p>
+                    <h3>Digital Egypt Cubs Initiative - Level One</h3>
+                    <p>وزارة الاتصالات وتكنولوجيا المعلومات بالتعاون مع Udacity</p>
                 </div>
-                <div class="card-footer">7-9-2026</div>
+                <div class="card-footer">
+                    <span>أكتوبر 2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
+            </div>
+
+            <!-- 9. مسابقة أشبال مصر الرقمية (1) -->
+            <div class="card" data-category="competitions">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="31109173200153.jpg" alt="DECI Competition Phase 2">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
+                </div>
+                <div class="card-header">
+                    <span class="org-name">مسابقة أشبال مصر الرقمية</span>
+                    <span class="badge">Eyouth</span>
+                </div>
+                <div class="card-body">
+                    <h3>Second Phase (Workshops and Team Formation)</h3>
+                    <p>DECI Summer Competition - 4th Batch of the Basic Program</p>
+                </div>
+                <div class="card-footer">
+                    <span>سبتمبر 2026</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
+            </div>
+
+            <!-- 10. مسابقة DIGITOPIA (2) -->
+            <div class="card" data-category="competitions">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="CamScanner ٢٨‏-٠٦‏-٢٠٢٦ ١٤.٤٥_3.jpg" alt="DIGITOPIA Competition">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
+                </div>
+                <div class="card-header">
+                    <span class="org-name">مسابقة أشبال مصر الرقمية / DIGITOPIA</span>
+                    <span class="badge">وزارة الاتصالات</span>
+                </div>
+                <div class="card-body">
+                    <h3>مجال البرمجيات والذكاء الاصطناعي</h3>
+                    <p>إنجاز المرحلة الثانية ضمن المسابقات الرسمية بنجاح.</p>
+                </div>
+                <div class="card-footer">
+                    <span>عام 2025</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
+            </div>
+
+            <!-- 11. جرافيك ديزاين -->
+            <div class="card" data-category="dev">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="شهادة_1.jpg" alt="Graphic Design">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
+                </div>
+                <div class="card-header">
+                    <span class="org-name">وزارة الشباب والرياضة</span>
+                    <span class="badge">تقدير</span>
+                </div>
+                <div class="card-body">
+                    <h3>كورس الجرافيك ديزاين (Graphic Design)</h3>
+                    <p>ممنوحة من مجلس أمناء كيان شباب بحري التابع للوزارة.</p>
+                </div>
+                <div class="card-footer">
+                    <span>تقدير للتميز</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
+            </div>
+
+            <!-- 12. مؤسسة شباب الدقهلية -->
+            <div class="card" data-category="dev">
+                <div class="card-img-container" onclick="openModal(this)">
+                    <img src="PDFReader_Convert_٢٠٢٦٠٩١١_١٤١٧٤٢_1.png" alt="DYD Certificate">
+                    <span class="zoom-hint">🔍 اضغط للتكبير</span>
+                </div>
+                <div class="card-header">
+                    <span class="org-name">مؤسسة شباب الدقهلية</span>
+                    <span class="badge">DYD</span>
+                </div>
+                <div class="card-body">
+                    <h3>أتم بنجاح الدورة التعليمية في البرمجة</h3>
+                    <p>منحة تدريبية مقدمة من مؤسسة شباب الدقهلية DYD</p>
+                </div>
+                <div class="card-footer">
+                    <span>7-9-2026</span>
+                    <span class="verified-dot">✔ موثقة</span>
+                </div>
             </div>
 
         </div>
     </div>
 
+    <!-- نافذة عرض الصورة المكبرة -->
+    <div id="certModal" class="modal" onclick="closeModal(event)">
+        <span class="modal-close" onclick="closeModal(event)">&times;</span>
+        <img class="modal-content" id="modalImg" src="" alt="معاينة الشهادة">
+    </div>
+
     <footer>
-        <p>كلها شهادات حقيقية وليست فبركة</p>
+        <p>جميع الشهادات المعروضة حقيقية ومعتمدة بأرقام تحقق رسمية</p>
     </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        const modal = document.getElementById('certModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(container) {
+            const img = container.querySelector('img');
+            modalImg.src = img.src;
+            modal.classList.add('open');
+        }
+
+        function closeModal(event) {
+            if (event.target === modal || event.target.classList.contains('modal-close')) {
+                modal.classList.remove('open');
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modal.classList.remove('open');
+            }
+        });
+    </script>
 
 </body>
 </html>
